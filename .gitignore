@@ -1,0 +1,32 @@
+# ===== Rust 构建产物 =====
+target/
+**/*.rs.bk
+Cargo.lock.bak
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# ===== 模型权重（不随仓库分发，需自行下载）=====
+*.gguf
+*.bin
+!**/ggml-vocab-*.gguf
+
+# ===== 运行过程临时件（claim 中间文件、原始失败转储）=====
+_claim_*.json
+**/_raw_fail/
+*.tmp
+*.tmp_*
+*.log.tmp
+
+# ===== 编辑器 / 系统 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/

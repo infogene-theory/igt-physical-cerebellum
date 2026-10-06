@@ -1,0 +1,32 @@
+[package]
+name = "igt_core_math"
+version = "10.0.0"
+edition = "2021"
+authors = ["IGT Core Team"]
+description = "IGT τ谱动力学纯计算核心 — 谱求解/系统辨识/Lyapunov/演化模拟/逆元构建/τ分层(第210批隔离)"
+license = "BSL-1.1"
+# SPDX-License-Identifier: BSL-1.1
+# Change Date: 2028-04-13 (converts to Apache-2.0)
+# See LICENSE file for full terms
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+nalgebra = "0.32"
+rand = "0.8"
+# D7（2026-08-23）: Hilbert 解析信号变换（复 EDMD 前置, 频域实现）
+rustfft = "6.4"
+# Step0-2b（MIGRATION-FINAL, 2026-08-29）: 拓扑不变量哈希（Layer1 extract 的 invariant_hash）
+# 纯哈希库——无 IO/网络/异步/时间，不违反 core 五类约束（ARCH-1 v2.1 §5）;
+# 加此依赖是为保证人机桥 Layer1-2 **搬迁逐字一致、算法零改动**（不为此改接口外置哈希）。
+sha2 = "0.10"
+
+[lib]
+name = "igt_core_math"
+path = "src/lib.rs"
+# 第220批: rlib 供 igt_agent/igt_core 静态链接; cdylib 产出 .dll/.so 供 FFI 嵌入
+crate-type = ["rlib", "cdylib"]
+
+# 第224批: 安卓 JNI 桥（仅安卓目标编译, 桌面零影响）
+[target.'cfg(target_os = "android")'.dependencies]
+jni = "0.21"

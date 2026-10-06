@@ -1,0 +1,26 @@
+[
+ {
+  "题": "ZCL001",
+  "臂": "A",
+  "态": "未启动",
+  "收敛轮": null,
+  "corrects": [
+   true
+  ],
+  "z箱": "clear",
+  "客观": "present",
+  "翻转率": null
+ },
+ {
+  "题": "ZCL001",
+  "臂": "D",
+  "态": "未启动",
+  "收敛轮": null,
+  "corrects": [
+   true
+  ],
+  "z箱": "clear",
+  "客观": "present",
+  "翻转率": null
+ }
+]

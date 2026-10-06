@@ -1,0 +1,30 @@
+[
+ {
+  "题": "ZFA002",
+  "臂": "A",
+  "态": "不收敛",
+  "收敛轮": null,
+  "corrects": [
+   false,
+   false,
+   false,
+   true
+  ],
+  "z箱": "fuzzy",
+  "客观": "absent",
+  "翻转率": 0.333
+ },
+ {
+  "题": "ZFP001",
+  "臂": "A",
+  "态": "未启动",
+  "收敛轮": null,
+  "corrects": [
+   true,
+   true
+  ],
+  "z箱": "fuzzy",
+  "客观": "present",
+  "翻转率": 0.0
+ }
+]
